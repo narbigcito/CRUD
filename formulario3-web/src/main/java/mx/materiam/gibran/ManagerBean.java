@@ -36,6 +36,12 @@ public class ManagerBean implements Serializable {
    public User getDetails(){
        return usuarioBean.getUser(1);
    }
+   
+    public  boolean createUser(String nombre, String password){
+        return usuarioBean.createUser(nombre, password);
+    }
+   
+   
     
     
 }

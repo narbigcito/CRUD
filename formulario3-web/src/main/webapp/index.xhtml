@@ -19,7 +19,7 @@ and open the template in the editor.
 
         <f:view>
             <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
+                <h1><h:outputText value="Crear/Editar"/></h1>
                 <p:panelGrid columns="2">
                     <p:outputLabel value="Id:" for="id" />
                     <p:inputText id="id" value="#{managerBean.details.id}" title="Id" />
@@ -28,6 +28,9 @@ and open the template in the editor.
                     <p:outputLabel value="Password:" for="password" />
                     <p:inputText id="password" value="#{managerBean.details.password}" title="Password" />
                 </p:panelGrid>
+                
+                <p:button value="agregar" action="#"></p:button>
+                
             </h:form>
         </f:view>
 
