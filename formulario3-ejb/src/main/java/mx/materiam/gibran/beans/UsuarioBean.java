@@ -58,4 +58,5 @@ public class UsuarioBean implements UsuarioBeanLocal {
         return em.find(User.class, id);
     }
 
+   
 }
