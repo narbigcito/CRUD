@@ -27,11 +27,12 @@ and open the template in the editor.
                 <p:inputText id="password" value="#{managerBean.current.password}" title="Password" />
             </p:panelGrid>
             <h:commandButton action="#{managerBean.createUser}" value="Agregar"/>
+            <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
         </h:form>
 
 
         <h:form>
-            <h1><h:outputText value="List"/></h1>
+            <h1><h:outputText value="Lista de usuarios"/></h1>
             <p:dataTable value="#{managerBean.users}" var="item" selectionMode="single" selection="#{managerBean.current}" rowKey="#{item.id}">
                 <p:ajax event="rowSelect" update="formaUsuario" />
                 <p:column>
@@ -53,12 +54,7 @@ and open the template in the editor.
                     <h:outputText value="#{item.password}"/>
                 </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Borrar"/>
-                    </f:facet>
-                    <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
-                </p:column>
+                
 
 
             </p:dataTable>
