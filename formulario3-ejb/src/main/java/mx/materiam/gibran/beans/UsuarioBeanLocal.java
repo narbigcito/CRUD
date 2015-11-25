@@ -20,4 +20,5 @@ public interface UsuarioBeanLocal {
     List<User> getUsers();
     User getUser(long id);
     void delete(User current);
+    void update(User current);
 }

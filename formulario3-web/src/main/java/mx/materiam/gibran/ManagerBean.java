@@ -22,7 +22,6 @@ public class ManagerBean implements Serializable {
     @EJB
     private mx.materiam.gibran.beans.UsuarioBeanLocal usuarioBean;
     private User current;
-    private User selectUser;
 
     /**
      * Creates a new instance of ManagerBean
@@ -62,24 +61,8 @@ public class ManagerBean implements Serializable {
     public void delete(){
         usuarioBean.delete(current);
     } 
-
-    /**
-     * @return the selectUser
-     */
-    public User getSelectUser() {
-        return selectUser;
-    }
-
-    /**
-     * @param selectUser the selectUser to set
-     */
-    public void setSelectUser(User selectUser) {
-        this.selectUser = selectUser;
-    }
-   
-   
     
-    
+    public void update(){
+        usuarioBean.update(current);
+    }
 }
-
-

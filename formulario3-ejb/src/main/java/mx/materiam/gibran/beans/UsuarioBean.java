@@ -61,4 +61,9 @@ public class UsuarioBean implements UsuarioBeanLocal {
         em.remove(u);
     }
 
+    @Override
+    public void update(User current) {
+        em.merge(current);
+    }
+
 }
