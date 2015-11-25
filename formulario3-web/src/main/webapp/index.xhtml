@@ -27,7 +27,6 @@ and open the template in the editor.
                 <p:inputText id="password" value="#{managerBean.current.password}" title="Password" />
             </p:panelGrid>
             <h:commandButton action="#{managerBean.createUser}" value="Agregar"/>
-            <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
         </h:form>
 
 
@@ -53,11 +52,9 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{item.password}"/>
                 </p:column>
-
-                
-
-
             </p:dataTable>
+            <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
+            <h:commandButton action="#" value="Editar"/>
         </h:form>
     </h:body>  
 </html>
