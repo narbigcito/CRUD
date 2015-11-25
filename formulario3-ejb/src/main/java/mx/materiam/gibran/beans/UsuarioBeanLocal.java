@@ -16,7 +16,8 @@ import mx.materiam.gibran.entities.User;
 @Local
 public interface UsuarioBeanLocal {
     
-    boolean createUser(String nombre, String password);
+    boolean createUser(User current);
     List<User> getUsers();
     User getUser(long id);
+    void delete(User current);
 }

@@ -27,12 +27,9 @@ public class UsuarioBean implements UsuarioBeanLocal {
     private static final Logger LOG = Logger.getLogger(UsuarioBean.class.getName());
 
     @Override
-    public boolean createUser(String nombre, String password) {
-        User u = new User();
-        u.setNombre(nombre);
-        u.setPassword(password);
+    public boolean createUser(User current) {
         try {
-            em.persist(u);
+            em.persist(current);
             return true;
         } catch (Exception e) {
             LOG.severe("No se pudo persisitir");
@@ -56,6 +53,11 @@ public class UsuarioBean implements UsuarioBeanLocal {
     @Override
     public User getUser(long id) {
         return em.find(User.class, id);
+    }
+
+    @Override
+    public void delete(User current) {
+        em.remove(current);
     }
 
    

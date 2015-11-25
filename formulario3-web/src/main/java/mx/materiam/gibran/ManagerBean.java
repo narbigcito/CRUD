@@ -21,11 +21,14 @@ import mx.materiam.gibran.entities.User;
 public class ManagerBean implements Serializable {
     @EJB
     private mx.materiam.gibran.beans.UsuarioBeanLocal usuarioBean;
+    private User current;
+    private User selectUser;
 
     /**
      * Creates a new instance of ManagerBean
      */
     public ManagerBean() {
+        current = new User();
     }
 
     
@@ -37,8 +40,41 @@ public class ManagerBean implements Serializable {
        return usuarioBean.getUser(1);
    }
    
-    public  boolean createUser(String nombre, String password){
-        return usuarioBean.createUser(nombre, password);
+    public  boolean createUser(){
+        return usuarioBean.createUser(current);
+       
+    }
+
+    /**
+     * @return the current
+     */
+    public User getCurrent() {
+        return current;
+    }
+
+    /**
+     * @param current the current to set
+     */
+    public void setCurrent(User current) {
+        this.current = current;
+    }
+
+    public void delete(){
+        usuarioBean.delete(current);
+    } 
+
+    /**
+     * @return the selectUser
+     */
+    public User getSelectUser() {
+        return selectUser;
+    }
+
+    /**
+     * @param selectUser the selectUser to set
+     */
+    public void setSelectUser(User selectUser) {
+        this.selectUser = selectUser;
     }
    
    

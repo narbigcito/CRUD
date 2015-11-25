@@ -21,16 +21,12 @@ and open the template in the editor.
             <h:form>
                 <h1><h:outputText value="Crear/Editar"/></h1>
                 <p:panelGrid columns="2">
-                    <p:outputLabel value="Id:" for="id" />
-                    <p:inputText id="id" value="#{managerBean.details.id}" title="Id" />
                     <p:outputLabel value="Nombre:" for="nombre" />
-                    <p:inputText id="nombre" value="#{managerBean.details.nombre}" title="Nombre" />
+                    <p:inputText id="nombre" value="#{managerBean.current.nombre}" title="Nombre" />
                     <p:outputLabel value="Password:" for="password" />
-                    <p:inputText id="password" value="#{managerBean.details.password}" title="Password" />
+                    <p:inputText id="password" value="#{managerBean.current.password}" title="Password" />
                 </p:panelGrid>
-                
-                <h:commandButton action="#{managerBean.createUser(nombre, password)}" value="Agregar"/>
-                
+                <h:commandButton action="#{managerBean.createUser}" value="Agregar"/>
             </h:form>
         </f:view>
 
@@ -56,6 +52,15 @@ and open the template in the editor.
                         </f:facet>
                         <h:outputText value="#{item.password}"/>
                     </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Borrar"/>
+                        </f:facet>
+                        <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
+                    </p:column>
+                    
+                   
                 </p:dataTable>
             </h:form>
         </f:view>
