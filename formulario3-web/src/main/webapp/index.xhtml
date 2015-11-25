@@ -33,7 +33,7 @@ and open the template in the editor.
         <f:view>
             <h:form>
                 <h1><h:outputText value="List"/></h1>
-                <p:dataTable value="#{managerBean.users}" var="item">
+                <p:dataTable id="eventsDT" value="#{managerBean.users}" var="item">
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Id"/>
