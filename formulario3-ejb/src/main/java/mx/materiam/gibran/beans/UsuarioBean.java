@@ -57,8 +57,8 @@ public class UsuarioBean implements UsuarioBeanLocal {
 
     @Override
     public void delete(User current) {
-        em.remove(current);
+        User u = em.find(User.class, current.getId());
+        em.remove(u);
     }
 
-   
 }
