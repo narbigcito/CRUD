@@ -5,6 +5,8 @@
  */
 package mx.materiam.gibran.entities;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class User implements Serializable {
     private Long id;
     private String nombre;
     private String password;
+    private File pdf;
 
     public Long getId() {
         return id;
@@ -84,5 +87,21 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /**
+     * @return the psf
+     */
+    public File getPsf() {
+        return pdf;
+    }
+
+    /**
+     * @param psf the psf to set
+     */
+    public void setPsf(File psf) {
+        this.pdf = psf;
+    }
+
+ 
     
 }

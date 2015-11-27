@@ -45,7 +45,7 @@ public class UsuarioBean implements UsuarioBeanLocal {
             Query q = em.createQuery("SELECT u FROM User u");
             return q.getResultList();
         } catch (Exception e) {
-            LOG.severe("No se pudo traer todos los Usuarios");
+            LOG.severe("No se pudo traer todos los Usuarios u.u");
             return null;
         }
     }
