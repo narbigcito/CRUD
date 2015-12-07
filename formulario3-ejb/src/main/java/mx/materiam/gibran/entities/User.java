@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.primefaces.model.UploadedFile;
 
 /**
  *
@@ -25,7 +26,9 @@ public class User implements Serializable {
     private Long id;
     private String nombre;
     private String password;
-    private File pdf;
+    private byte[] arrayPdf;
+    
+    
 
     public Long getId() {
         return id;
@@ -89,17 +92,17 @@ public class User implements Serializable {
     }
 
     /**
-     * @return the psf
+     * @return the arrayPdf
      */
-    public File getPsf() {
-        return pdf;
+    public byte[] getArrayPdf() {
+        return arrayPdf;
     }
 
     /**
-     * @param psf the psf to set
+     * @param arrayPdf the arrayPdf to set
      */
-    public void setPsf(File psf) {
-        this.pdf = psf;
+    public void setArrayPdf(byte[] arrayPdf) {
+        this.arrayPdf = arrayPdf;
     }
 
  
