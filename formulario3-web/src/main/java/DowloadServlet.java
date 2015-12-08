@@ -48,9 +48,9 @@ public class DowloadServlet extends HttpServlet {
             String tag = "";
             
             String g="";
-            User u = ub.getUser(7);
             g=request.getParameter("name");
             System.out.println(g);
+            User u = ub.getUser(Integer.parseInt(g));
 
             bytes = u.getArrayPdf();
             mime = "application/pdf";
