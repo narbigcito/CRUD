@@ -103,8 +103,5 @@ public class User implements Serializable {
      */
     public void setArrayPdf(byte[] arrayPdf) {
         this.arrayPdf = arrayPdf;
-    }
-
- 
-    
+    } 
 }

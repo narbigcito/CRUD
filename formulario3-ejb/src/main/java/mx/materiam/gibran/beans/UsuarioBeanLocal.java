@@ -21,4 +21,5 @@ public interface UsuarioBeanLocal {
     User getUser(long id);
     void delete(User current);
     void update(User current);
+    byte[] dowload(User current);
 }

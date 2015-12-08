@@ -5,7 +5,9 @@
  */
 package mx.materiam.gibran;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -29,7 +31,6 @@ public class ManagerBean implements Serializable {
     @EJB
     private mx.materiam.gibran.beans.UsuarioBeanLocal usuarioBean;
     private User current;
-    private UploadedFile file;
 
     /**
      * Creates a new instance of ManagerBean
@@ -48,6 +49,7 @@ public class ManagerBean implements Serializable {
 
     public boolean createUser() {
 
+        System.out.println("El archivo se ha creado correctamente");
         return usuarioBean.createUser(current);
 
     }
@@ -74,22 +76,6 @@ public class ManagerBean implements Serializable {
         usuarioBean.update(current);
     }
 
-    /**
-     * @return the file
-     */
-    public UploadedFile getFile() {
-        return file;
-    }
-
-    /**
-     * @param file the file to set
-     */
-    public void setFile(UploadedFile file) {
-        this.file = file;
-    }
-
-    //////////////////////////////////////////////
- 
     public void upload(FileUploadEvent evt) {
         UploadedFile uf = evt.getFile();
         if (uf != null) {
@@ -100,6 +86,12 @@ public class ManagerBean implements Serializable {
                 Logger.getLogger(ManagerBean.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+
+    public void dowload() {
+        InputStream myInputStream = new ByteArrayInputStream(usuarioBean.dowload(current));
+
+       
     }
 
 }

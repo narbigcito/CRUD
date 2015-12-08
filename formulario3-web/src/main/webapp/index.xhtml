@@ -22,17 +22,22 @@ and open the template in the editor.
             <h1><h:outputText value="Crear/Editar"/></h1>
             <p:panelGrid columns="2">
                 <p:outputLabel value="Nombre:" for="nombre" />
-                <p:inputText id="nombre" value="#{managerBean.current.nombre}" title="Nombre" />
+                <p:inputText id="nombre" value="#{managerBean.current.nombre}" title="Nombre"  />
                 <p:outputLabel value="Password:" for="password" />
                 <p:inputText id="password" value="#{managerBean.current.password}" title="Password" />
             </p:panelGrid>
             <h:commandButton action="#{managerBean.createUser}" value="Agregar"/>
             <h:commandButton action="#{managerBean.delete}" value="Borrar"/>
-            <h:commandButton action="#{managerBean.update}" value="Editar"/>   
+            <h:commandButton action="#{managerBean.update}" value="Editar"/>  
+            
+ 
+           
+
+             <a href="DowloadServlet?name=hola">Descargar</a> 
             
             
            
-            <p:fileUpload mode="advanced" multiple="true" auto="true" fileUploadListener="#{managerBean.upload}" label="#{txt['upload']}" uploadLabel="Subir" cancelLabel="Cancelar"/>
+            <p:fileUpload mode="advanced" multiple="true" auto="true" fileUploadListener="#{managerBean.upload}" label="subir" uploadLabel="Subir" cancelLabel="Cancelar"/>
 
            
         </h:form>

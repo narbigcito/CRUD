@@ -5,6 +5,7 @@
  */
 package mx.materiam.gibran.beans;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import mx.materiam.gibran.entities.User;
+import sun.misc.IOUtils;
 
 /**
  *
@@ -65,5 +67,13 @@ public class UsuarioBean implements UsuarioBeanLocal {
     public void update(User current) {
         em.merge(current);
     }
+
+    @Override
+    public byte[] dowload(User current) {
+        User u = em.find(User.class, current.getId());
+        return u.getArrayPdf();
+    }
+
+   
 
 }
